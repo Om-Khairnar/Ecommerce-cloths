@@ -1,13 +1,16 @@
-" use client "
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import { CartProvider } from "use-shopping-cart";
-import ShoppingCartModal from "./components/ShoppingCartModel";
+import CartProvider  from "./components/Providers";
 
 
 const inter = Inter({ subsets: ["latin"] });
+
+import ShoppingCartModal from "./components/ShoppingCartModel";
+
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",

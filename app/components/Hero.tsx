@@ -51,24 +51,30 @@ export default async function Hero() {
       </div>
 
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div className="flex h-12 w-64 divide-x overflow-hidden rounded-lg border">
+        <div className="flex h-18 w-90 divide-x overflow-hidden rounded-lg border">
           <Link
-            href="/Men"
+            href="/OverSizeT-shirts"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
           >
-            Men
+            OverSize T-shirts
           </Link>
           <Link
-            href="/Women"
+            href="/OverSizePolos"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
           >
-            Women
+            OverSize Polos
           </Link>
           <Link
-            href="/Teens"
+            href="/OverSizeDesignerT-shirts"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
           >
-            Teens
+            OverSize Designer T-shirts
+          </Link>
+          <Link
+            href="/OverSizeDesignerPolos"
+            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+          >
+            OverSize Designer Polos
           </Link>
         </div>
       </div>

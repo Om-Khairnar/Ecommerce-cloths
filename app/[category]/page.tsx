@@ -32,6 +32,36 @@ export default async function CategoryPage({
             Our Products for {params.category}
           </h2>
         </div>
+        
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:hidden">
+          <div className="flex h-18 w-90 divide-x overflow-hidden rounded-lg border">
+            <Link
+              href="/OverSizeT-shirts"
+              className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            >
+              OverSize T-shirts
+            </Link>
+            <Link
+              href="/OverSizePolos"
+              className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            >
+              OverSize Polos
+            </Link>
+            <Link
+              href="/OverSizeDesignerT-shirts"
+              className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            >
+              OverSize Designer T-shirts
+            </Link>
+            <Link
+              href="/OverSizeDesignerPolos"
+              className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            >
+              OverSize Designer Polos
+            </Link>
+          </div>
+        </div>
+
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
             <div key={product._id} className="group relative">

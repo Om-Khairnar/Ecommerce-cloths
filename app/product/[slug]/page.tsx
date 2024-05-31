@@ -3,7 +3,7 @@ import { fullProduct } from "@/app/interface";
 import ImageGallery from "@/app/components/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
-
+import AddToBag from "@/app/components/AddToBag";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -75,8 +75,46 @@ export default async function Productpage({
               <span className="text-sm">2-4 Day Shipping</span>
             </div>
 
+            <div className="mb-10">
+              <div className="flex justify-between mb-2">
+                <div className="text-md font-semibold">Select Size</div>
+                <div className="text-md font-medium text-black/[0.5] cursor-pointer">
+                  Select Guide
+                </div>
+              </div>
+
+              <div className="grid grid-cols-6 gap-2">
+                <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
+                  S
+                </div>
+                <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
+                  M
+                </div>
+                <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
+                  L
+                </div>
+                <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
+                  XL
+                </div>
+                <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
+                  XXL
+                </div>
+                <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
+                  XXXL
+                </div>
+              </div>
+            </div>
+
             <div className="flex gap-2.5">
-              <Button>Add To Bag</Button>
+              <AddToBag
+                currency="USD"
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                key={data._id}
+                price_id={data.price_id}
+              />
               <Button variant={"secondary"}>Checkout now</Button>
             </div>
 
