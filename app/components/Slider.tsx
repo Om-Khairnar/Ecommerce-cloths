@@ -12,7 +12,7 @@ async function getData() {
 }
 
 export default function Slider() {
-  const slides = [
+  const slidesLarge = [
     {
       url:"/Assets/first.png",
     },
@@ -22,7 +22,6 @@ export default function Slider() {
     {
       url: "/Assets/3.png",
     },
-
     {
       url: "/Assets/4.png",
     },
@@ -30,7 +29,42 @@ export default function Slider() {
       url: "/Assets/5.png",
     },
   ];
+
+  const slidesSmall = [
+    {
+      url: "/Assets/small1.png",
+    },
+    {
+      url: "/Assets/small2.png",
+    },
+    {
+      url: "/Assets/small3.png",
+    },
+    {
+      url: "/Assets/small4.png",
+    },
+    {
+      url: "/Assets/small5.png",
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Initial check
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const slides = isSmallScreen ? slidesSmall : slidesLarge;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,8 +91,9 @@ export default function Slider() {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+
   return (
-    <div className="max-w-[1400px] h-[600px] w-full m-auto py-8 px-4 relative group">
+    <div className="max-w-[1400px] h-[600px] w-full m-auto mb-10 mt-1 px-4 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
