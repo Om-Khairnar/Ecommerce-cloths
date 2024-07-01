@@ -4,6 +4,7 @@ import ImageGallery from "@/app/components/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import AddToBag from "@/app/components/AddToBag";
+import CheckoutNow from "@/app/components/CheckoutNow";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -21,6 +22,8 @@ async function getData(slug: string) {
 
   return data;
 }
+export const dynamic = "force-dynamic";
+
 
 export default async function Productpage({
   params,
@@ -115,7 +118,16 @@ export default async function Productpage({
                 key={data._id}
                 price_id={data.price_id}
               />
-              <Button variant={"secondary"}>Checkout now</Button>
+              {/* <Button variant={"secondary"}>Checkout now</Button> */}
+              <CheckoutNow
+                currency="USD"
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                key={data._id}
+                price_id={data.price_id}
+              />
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">

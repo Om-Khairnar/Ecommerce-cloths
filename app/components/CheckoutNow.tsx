@@ -34,7 +34,7 @@ export default function CheckoutNow({
       }}
     >
       {" "}
-      Add to Cart
+      Checkout
     </Button>
   );
 }
