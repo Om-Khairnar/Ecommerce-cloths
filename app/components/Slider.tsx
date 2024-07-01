@@ -11,6 +11,10 @@ async function getData() {
   return data;
 }
 
+interface Slide {
+  url: string;
+}
+
 export default function Slider() {
   const slidesLarge = [
     {
