@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Newest from "./components/Newest";
 import Slider from "./components/Slider";
 
-export const dynamic = " force-dynamic";
+export const dynamic = "force-dynamic";
 
 
 export default function Home() {
