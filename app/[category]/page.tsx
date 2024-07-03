@@ -34,7 +34,7 @@ export default async function CategoryPage({
             Our Products for {params.category}
           </h2>
         </div>
-        
+
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:hidden">
           <div className="flex h-18 w-90 divide-x overflow-hidden rounded-lg border">
             <Link
@@ -89,7 +89,7 @@ export default async function CategoryPage({
                   </p>
                 </div>
                 <p className="text-sm font-medium text-gray-900">
-                  ${product.price}
+                  ₹{product.price}
                 </p>
               </div>
             </div>

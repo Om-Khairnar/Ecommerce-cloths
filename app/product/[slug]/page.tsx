@@ -24,7 +24,6 @@ async function getData(slug: string) {
 }
 export const dynamic = "force-dynamic";
 
-
 export default async function Productpage({
   params,
 }: {
@@ -61,10 +60,10 @@ export default async function Productpage({
             <div className="mb-4">
               <div className="flex items-end gap-2">
                 <span className="text-xl font-bold text-gray-800 md:text-2xl">
-                  ${data.price}
+                  ₹{data.price}
                 </span>
                 <span className="mb-0.5 text-red-500 line-through">
-                  ${data.price + 30}
+                  ₹{data.price + 30}
                 </span>
               </div>
 
