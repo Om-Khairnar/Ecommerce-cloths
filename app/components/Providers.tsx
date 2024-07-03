@@ -13,7 +13,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
       successUrl="https://theoversize.vercel.app//stripe/success"
       cancelUrl="https://theoversize.vercel.app//stripe/error"
       currency="USD"
-      billingAddressCollection={false}
+      billingAddressCollection={true}
       shouldPersist={true}
       language="en-US"
     >
